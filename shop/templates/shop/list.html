@@ -1,0 +1,39 @@
+{% extends "shop/base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+        Inventories
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Products</h2>
+            <div class="row">
+                {% for inventory in inventories %}
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                        <!--
+                            <a href="{{ product.get_absolute_url }}">
+                                <img src="{% if product.image %}{{ product.image.url }}
+                                          {% else %}{% static "img/no_image.png" %} {% endif %}">
+                            </a>
+                        -->
+                            <!--
+                            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+                            -->
+                            <img src="{% static "img/no_image.png" %}">
+                            {{inventory.item_name}}
+                            ${{ inventory.price }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+        </div>
+
+
+    </div>
+{% endblock %}
