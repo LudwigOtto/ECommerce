@@ -2,10 +2,11 @@
 Django with MySQL
 
 *shop*
-	Showing items in "ecommerce.Inventory" 
-	- Models: 1) Inventory
-	- Views: 1) inventory_list  2)inventory_detail
-	- Admin: 1) InventoryAdmin 
+
+Showing items in "ecommerce.Inventory" 
+- Models: 1) Inventory
+- Views: 1) inventory_list  2)inventory_detail
+- Admin: 1) InventoryAdmin 
 
 
 *cart*
@@ -24,11 +25,10 @@ Django with MySQL
 
 
 _SQL commands_ 	
+
 - Insert:
-
-> 	ex. insert into ecommerce.Inventory(`Item Id`, `Item Name`, `Quantity`, `Price`, `Seller`, `Type`) 
->       VALUES (20, 'Amazon Alexa', 3, 89, 'Amazon', '' );
+> insert into ecommerce.Inventory(`Item Id`, `Item Name`, `Quantity`, `Price`, `Seller`, `Type`) 
+> VALUES (20, 'Amazon Alexa', 3, 89, 'Amazon', '' );
 - Update:
-
-> 	ex. update ecommerce.Inventory set quantity=2 where `Item Id`=20;
+> update ecommerce.Inventory set quantity=2 where `Item Id`=20;
 
