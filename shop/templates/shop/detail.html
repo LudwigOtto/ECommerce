@@ -1,0 +1,73 @@
+{% extends "shop/base.html" %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+{% block title %}
+    Buy {{inventory.item_name}}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6 col-md-4">
+
+            </div>
+            <div class="col-md-6 col-md-4">
+                <div class="thumbnail">
+                    <!--
+                    <img src="{% if product.image %}{{ product.image.url }}
+                              {% else %}{% static "img/no_image.png" %}{% endif %}"
+                         class="img-responsive">
+                    -->
+                    <img src="{% static "img/no_image.png" %}">
+                    <div class="caption">
+                        <div class="row">
+                            <div class="col-md-9 col-xs-6">
+                                <h3>{{ inventory.item_name }}</h3>
+                            </div>
+                            <div class="col-md-3 col-xs-6 price">
+                                <h3>
+                                    <label>${{ inventory.price }}</label></h3>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            
+                            {% if inventory.type %}
+                            <div class="col-md-2 col-xs-6">
+                                <h4>Type:</h4>
+                            </div>
+                            <div class="col-md-3 col-xs-6 price">
+                                <h4>{{ inventory.type }}</h4>
+                            </div>
+                            {% else %}
+                            <div class="col-md-5 col-xs-0">
+                            </div>
+                            {% endif %}
+                            <div class="col-md-1 col-xs-0">
+                            </div>
+                            <div class="col-md-2 col-xs-6">
+                                <h4>Seller:</h4>
+                            </div>
+                            <div class="col-md-3 col-xs-6 price">
+                                <h4>{{ inventory.seller }}</h4>
+                            </div>
+                        </div>
+                        
+                      
+                        <p></p>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-6 col-md-4">
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

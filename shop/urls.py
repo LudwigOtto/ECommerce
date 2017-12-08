@@ -4,7 +4,10 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.inventory_list,
-        name='inventory_list')
+        name='inventory_list'),
+    url(r'^(?P<item_id>\d+)/$',
+        views.inventory_detail,
+        name='inventory_detail')
     ]
 """
     url(r'^(?P<category_slug>[-\w]+)/$',

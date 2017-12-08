@@ -18,24 +18,7 @@
         <a href="/"><h1>My shop</h1></a>
     </div>
     <div class="panel panel-default">
-            <!--
-        <div class="panel-heading">
-            {# call __len__ #}
-            {% with total_items=cart|length %}
-                {% if cart|length > 0 %}
-                    Your cart:
-                    <a href="{% url "cart:cart_detail" %}">
-                        {# If total_items is 1, the output will be 1 item. #}
-                        {# If total_items is 2, the output will be 2 items. #}
-                        {{ total_items }} item{{ total_items|pluralize }},
-                        ${{ cart.get_total_price }}
-                    </a>
-                {% else %}
-                    Your shopping cart is empty.
-                {% endif %}
-            {% endwith %}
-        </div>
-            -->
+
     </div>
 
     {% block content %}

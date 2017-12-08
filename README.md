@@ -5,8 +5,8 @@ Django with MySQL
 
 Showing items in "ecommerce.Inventory" 
 - Models: 1) Inventory
-- Urls: 1) inventory_list  2)inventory_detail 
-- Views: 1) inventory_list  2)inventory_detail
+- Urls: 1) inventory_list  2) inventory_detail 
+- Views: 1) inventory_list  2) inventory_detail
 - Admin: 1) InventoryAdmin 
 
 
@@ -24,7 +24,7 @@ Showing all items add in "ecommerce.Item"
 
 Showing history of each item bought buy each customer in "ecommerce.ShoppingCart"
 - Models: 
-- 
+-  
 
 
 
