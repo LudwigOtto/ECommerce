@@ -1,7 +1,7 @@
 # ECommerce
 Django with MySQL
 
-*shop*
+**shop**
 
 Showing items in "ecommerce.Inventory" 
 - Models: 1) Inventory
@@ -9,15 +9,18 @@ Showing items in "ecommerce.Inventory"
 - Admin: 1) InventoryAdmin 
 
 
-*cart*
-	Showing all items add in "ecommerce.Item"
+**cart**
+
+
+Showing all items add in "ecommerce.Item"
 
 
 
 
 
-*orders*
-	Showing history of each item bought buy each customer in "ecommerce.ShoppingCart"
+**orders**
+
+Showing history of each item bought buy each customer in "ecommerce.ShoppingCart"
 
 
 
