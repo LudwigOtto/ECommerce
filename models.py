@@ -9,7 +9,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-
+"""
 class Customer(models.Model):
     customer_id = models.IntegerField(db_column='Customer Id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
     email = models.CharField(db_column='Email', unique=True, max_length=45)  # Field name made lowercase.
@@ -21,7 +21,7 @@ class Customer(models.Model):
     class Meta:
         managed = False
         db_table = 'Customer'
-
+"""
 
 class Employee(models.Model):
     employee_id = models.IntegerField(db_column='Employee Id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.

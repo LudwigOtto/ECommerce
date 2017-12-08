@@ -1,0 +1,25 @@
+{% extends "shop/base.html" %}
+{% load bootstrap3 %}
+{% block title %}
+    All Customer
+{% endblock %}
+
+{% block content %}
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">Customer List</div>
+        <div class="panel-body">
+            <ul class="list-group">
+                {% for customer in customers %}
+                    <li class="list-group-item">
+                        ${{ customer.customer_id }}
+                        <span class="badge">${{ customer.email }} ${{customer.email }} ${{ customer.first_name }} ${{ customer.last_name }} ${{ customer.phone_number }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+
+
+{% endblock %}

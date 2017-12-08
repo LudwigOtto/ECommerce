@@ -20,8 +20,14 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('shop.urls', namespace='shop')),
+    url(r'^', include('shop.urls', namespace='shop')),						# Shopping page
+    url(r'^customer/', include('customer.urls', namespace='customer')),		# Customer information
+    # url(r'^cart/', include('cart.urls', namespace='cart')),
+    # url(r'^orders/', include('orders.urls', namespace='orders')),
+    # url(r'^payment/', include('payment.urls', namespace='payment')),
+
 ]
+
 
 
 #if settings.DEBUG:
