@@ -22,7 +22,7 @@ class Customer(models.Model):
         managed = False
         db_table = 'Customer'
 """
-
+"""
 class Employee(models.Model):
     employee_id = models.IntegerField(db_column='Employee Id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
     role = models.CharField(db_column='Role', max_length=45)  # Field name made lowercase.
@@ -32,7 +32,7 @@ class Employee(models.Model):
     class Meta:
         managed = False
         db_table = 'Employee'
-
+"""
 """
 class Inventory(models.Model):
     item_id = models.IntegerField(db_column='Item Id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
