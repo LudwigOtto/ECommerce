@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Inventory(models.Model):
@@ -13,3 +14,6 @@ class Inventory(models.Model):
     class Meta:
         managed = False
         db_table = 'Inventory'
+
+    def get_absolute_url(self):
+        return reverse('shop:inventory_detail', args=[self.item_id])

@@ -46,7 +46,7 @@ class Inventory(models.Model):
         managed = False
         db_table = 'Inventory'
 """
-
+"""
 class Item(models.Model):
     item_id = models.ForeignKey(Inventory, models.DO_NOTHING, db_column='Item Id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
     price = models.IntegerField(db_column='Price')  # Field name made lowercase.
@@ -59,7 +59,7 @@ class Item(models.Model):
         managed = False
         db_table = 'Item'
         unique_together = (('item_id', 'customer_id'),)
-
+"""
 
 class Payment(models.Model):
     customer_id = models.ForeignKey(Customer, models.DO_NOTHING, db_column='Customer Id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.

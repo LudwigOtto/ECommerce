@@ -58,7 +58,15 @@
                       
                         <p></p>
                     </div>
-
+                        <form action="{% url "cart:cart_add" inventory.item_id %}" method="post">
+                            {% csrf_token %}
+                            {% bootstrap_form cart_product_form %}
+                            {% buttons %}
+                                <button type="submit" class="btn btn-success btn-product">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
+                                </button>
+                            {% endbuttons %}
+                        </form>
 
                 </div>
             </div>

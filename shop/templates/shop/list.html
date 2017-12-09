@@ -14,9 +14,12 @@
                 {% for inventory in inventories %}
                     <div class="col-md-4">
                         <div class="thumbnail">
-                       
+                            <a href="{{ inventory.get_absolute_url}}">
                             <img src="{% static "img/no_image.png" %}">
+                            </a>
+                            <a href="{{ inventory.get_absolute_url}}">
                             {{inventory.item_name}}
+                            </a>
                             ${{ inventory.price }}
                         </div>
                     </div>
