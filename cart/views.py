@@ -28,9 +28,6 @@ def cart_add(request, item_id):
             per_price = Item.objects.get(item_id=item_id).price
             Item.objects.filter(item_id=item_id).update(total_price = per_price * new_quantity)
         except ObjectDoesNotExist:
-            print('~~~~~~~')
-            print('ObjectDoesNotExist')
-            print('~~~~~~~')
             Item.objects.create(item_id=product,
                                 price=product.price,
                                 type=product.type,
