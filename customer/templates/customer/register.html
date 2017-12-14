@@ -18,7 +18,7 @@
   <h2>Register</h2>
 </div>
 
-  <form method="post">
+  <form  action="{% url "customer:new" %}"  method="post">
     {% csrf_token %}
     {% bootstrap_form registerForm %}
     <p align="middle">
