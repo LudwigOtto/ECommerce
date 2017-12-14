@@ -24,7 +24,8 @@ def cart_add(request, item_id):
                                 type=product.type,
                                 seller=product.seller,
                                 customer_id=customer,
-                                quantity_per_item=cd['quantity'])
+                                quantity_per_item=cd['quantity'],
+                                total_price = product.price * cd['quantity'])
 
     return redirect('cart:cart_detail')
 

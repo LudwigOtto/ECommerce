@@ -10,6 +10,7 @@ class Item(models.Model):
     seller = models.CharField(db_column='Seller', max_length=45)  # Field name made lowercase.
     customer_id = models.ForeignKey(Customer, models.DO_NOTHING, db_column='Customer Id')  # Field name made lowercase. Field renamed to remove unsuitable characters.
     quantity_per_item = models.IntegerField(db_column='Quantity per Item')  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    total_price = models.IntegerField(db_column='Total_Price')  # Field name made lowercase. Field renamed to remove unsuitable characters.
 
     class Meta:
         managed = False

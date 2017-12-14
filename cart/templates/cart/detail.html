@@ -12,8 +12,8 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Quantity</th>
                     <th class="text-center">Price</th>
                     <th class="text-center">Total</th>
                     <th> </th>
@@ -21,8 +21,12 @@
                 </thead>
                 <tbody>
                 {% for item in items %}
-                    <td class="col-sm-1 col-md-1 text-center"><strong>${{ item.item_id }}</strong></td>
-                    <td class="col-sm-1 col-md-1 text-center"><strong>${{ item.price }}</strong></td>
+                <tr>
+                    <td class="col-sm-1 col-md-3 text-center"><strong>{{ item.item_id.item_name }}</strong></td>
+                    <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.quantity_per_item }}</strong></td>
+                    <td class="col-sm-1 col-md-3 text-center"><strong>${{ item.price }}</strong></td>
+                    <td class="col-sm-1 col-md-3 text-center"><strong>${{ item.total_price }}</strong></td>
+                </tr>
                 {% endfor %}
                 </tbody>
             </table>
