@@ -49,7 +49,9 @@
     <div class="col-sm-12 col-md-10 col-md-offset-5">
           {% buttons %}
             <button type="button" class="btn btn-success btn-product">
-            Check
+                <a href="{% url "orders:shipment" %}">
+                    Check
+                </a>
             </button>
         {% endbuttons %}
     </div> 

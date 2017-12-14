@@ -18,7 +18,7 @@
   <h2>Shipment</h2>
 </div>
 
-  <form  action="{% url "order:payment" %}"  method="post">
+  <form  action="{% url "orders:shipmentAdd" %}"  method="post">
     {% csrf_token %}
     {% bootstrap_form ShipForm %}
     <p align="middle">

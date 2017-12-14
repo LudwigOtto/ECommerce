@@ -3,6 +3,9 @@ from . import views
 
 # Maybe no need to view customer
 urlpatterns = [
-    url(r'^ship$', views.shippment_add, name = 'shippment'),
-    url(r'^payment$', views.payment_add, name = 'payment'),
+    url(r'^ship$', views.shipment_view, name = 'shipment'),
+    url(r'^shipAdd$', views.shipment_add, name = 'shipmentAdd'),
+    url(r'^payment$', views.payment_view, name = 'payment'),
+    url(r'^payAdd$', views.payment_add, name = 'paymentAdd'),
+    #url(r'^detail$', views.order_view, name = 'order_detail'),
 ]

@@ -1,8 +1,9 @@
 from django.db import models
 from cart.models import Item
-from customer.model import Customer
+from customer.models import Customer
 
 # Create your models here.
+"""
 class ShoppingCart(models.Model):
     customer_id = models.ForeignKey(Item, models.DO_NOTHING, db_column='Customer Id')  # Field name made lowercase. Field renamed to remove unsuitable characters.
     item_name = models.CharField(db_column='Item Name', max_length=45)  # Field name made lowercase. Field renamed to remove unsuitable characters.
@@ -16,7 +17,7 @@ class ShoppingCart(models.Model):
         managed = False
         db_table = 'Shopping Cart'
         unique_together = (('shopping_cart_id', 'item_id'),)
-
+"""
 
 class Payment(models.Model):
     customer_id = models.ForeignKey(Customer, models.DO_NOTHING, db_column='Customer Id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.

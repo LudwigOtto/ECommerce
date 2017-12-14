@@ -9,9 +9,11 @@ class ShipForm(forms.Form):
                                 initial=False,
                                 widget=forms.HiddenInput)
 class PayForm(forms.Form):
+    DATE_INPUT_FORMATS = ['%d-%m-%Y']
     pay_Type = forms.CharField(label='Payment Type', widget=forms.TextInput)
     card_num = forms.CharField(label='Card Number', widget=forms.TextInput)
-    card_date = forms.DateField(label='Expire Date', widget=forms.DateInput)
+    card_date = forms.DateField(label='Expire Date', widget=forms.DateInput,
+            input_formats=DATE_INPUT_FORMATS)
 
     update = forms.BooleanField(required=False,
                                 initial=False,
