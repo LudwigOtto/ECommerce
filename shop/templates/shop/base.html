@@ -18,7 +18,11 @@
         <a href="/"><h1>My shop</h1></a>
     </div>
     <div class="panel panel-default">
-
+        <div class="panel-heading">
+            <a href="{% url "cart:cart_detail" %}">
+                Your cart
+            </a>
+        </div>
     </div>
 
     {% block content %}

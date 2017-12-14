@@ -1,25 +1,45 @@
 {% extends "shop/base.html" %}
 {% load bootstrap3 %}
 {% block title %}
-    All Customer
+    You
 {% endblock %}
 
 {% block content %}
-
-    <div class="panel panel-primary">
-        <div class="panel-heading">Customer List</div>
-        <div class="panel-body">
-            <ul class="list-group">
-                {% for customer in customers %}
-                    <li class="list-group-item">
-                        ${{ customer.customer_id }}
-                        <span class="badge">${{ customer.email }} ${{customer.email }} ${{ customer.first_name }} ${{ customer.last_name }} ${{ customer.phone_number }}</span>
-                    </li>
-                {% endfor %}
-            </ul>
-
+   <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">E-Mail</th>
+                    <th class="text-center">First Name</th>
+                    <th class="text-center">Last Name</th>
+                    <th class="text-center">Phone Number</th>
+                    <th class="text-center">Address</th>
+                    <th> </th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-sm-1 col-md-2 text-center"><strong>{{ customer.customer_id }}</strong></td>
+                        <td class="col-sm-1 col-md-2 text-center"><strong>{{ customer.email }}</strong></td>
+                        <td class="col-sm-1 col-md-2 text-center"><strong>{{ customer.first_name }}</strong></td>
+                        <td class="col-sm-1 col-md-2 text-center"><strong>{{ customer.last_name }}</strong></td>
+                        <td class="col-sm-1 col-md-2 text-center"><strong>{{ customer.phone_number }}</strong></td>
+                        <td class="col-sm-1 col-md-2 text-center"><strong>{{ customer.address }}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
     </div>
+    <div class="col-sm-12 col-md-10 col-md-offset-5">
+          {% buttons %}
+            <button type="button" class="btn btn-success btn-product">
+            Update
+            </button>
+        {% endbuttons %}
+    </div>                  
 
 
 {% endblock %}
