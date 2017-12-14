@@ -12,16 +12,26 @@
 
 </head>
 <body>
-
 <div class="container">
+    <p align="right">
+    <a href="{% url "customer:sign_in" %}">
+    Sign-In
+    </a>
+     or
+    <a href="{% url "customer:sign_up" %}">
+    Sign-Up
+    </a>
+    </p>
     <div class="page-header">
         <a href="/"><h1>My shop</h1></a>
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
+            <p align="right">
             <a href="{% url "cart:cart_detail" %}">
                 Your cart
             </a>
+            </p>
         </div>
     </div>
 
