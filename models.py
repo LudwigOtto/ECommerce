@@ -72,7 +72,7 @@ class Payment(models.Model):
         db_table = 'Payment'
         unique_together = (('customer_id', 'card_number'),)
 
-
+"""
 class Review(models.Model):
     item_id = models.ForeignKey(Inventory, models.DO_NOTHING, db_column='Item Id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
     customer_id = models.ForeignKey(Customer, models.DO_NOTHING, db_column='Customer Id')  # Field name made lowercase. Field renamed to remove unsuitable characters.
@@ -84,7 +84,7 @@ class Review(models.Model):
         managed = False
         db_table = 'Review'
         unique_together = (('item_id', 'customer_id'),)
-
+"""
 
 class Shipment(models.Model):
     physical_address = models.TextField(db_column='Physical Address')  # Field name made lowercase. Field renamed to remove unsuitable characters.

@@ -67,7 +67,30 @@
                                 </button>
                             {% endbuttons %}
                         </form>
-                        
+                      
+                        <h3> <font color="grey"> Review  </h3>
+
+                        {% for review in reviews %}
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    <b> Ratings: {{ review.ratings }} </b>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <p> Name: {{review.customer_id.first_name}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 col-xs-1">
+                                </div>
+                                <div class="col-md-10 col-xs-10">
+                                    <p>{{ review.detailed_review }}</p>
+                                </div>
+                            </div>
+                            
+                        {% endfor %}  
+
+
+
                 </div>
             </div>
             <div class="col-md-6 col-md-4">

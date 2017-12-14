@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Inventory
 from cart.forms import CartAddProductForm
+from review.models import Review
 
 def inventory_list(request):
     #inventories = Inventory.objects.filter(lambda x: x > 0, quantity)
@@ -15,7 +16,11 @@ def inventory_detail(request, item_id):
                                 item_id=item_id)
     cart_product_form = CartAddProductForm()#.__init__(target_id=inventory)
     cart_product_form.match_quantity(item_id)     # for matching quantity
+
+    reviews = Review.objects.filter(item_id=inventory)
+
     return render(request,
                   'shop/detail.html',
                   {'inventory': inventory,
-                   'cart_product_form': cart_product_form})
+                   'cart_product_form': cart_product_form,
+                   'reviews': reviews})
