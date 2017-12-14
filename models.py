@@ -97,7 +97,7 @@ class Shipment(models.Model):
         db_table = 'Shipment'
         unique_together = (('customer_id', 'shipment_detail'),)
 
-
+"""
 class ShoppingCart(models.Model):
     customer_id = models.ForeignKey(Item, models.DO_NOTHING, db_column='Customer Id')  # Field name made lowercase. Field renamed to remove unsuitable characters.
     item_name = models.CharField(db_column='Item Name', max_length=45)  # Field name made lowercase. Field renamed to remove unsuitable characters.
@@ -111,7 +111,7 @@ class ShoppingCart(models.Model):
         managed = False
         db_table = 'Shopping Cart'
         unique_together = (('shopping_cart_id', 'item_id'),)
-
+"""
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)

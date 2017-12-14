@@ -12,21 +12,14 @@ from .models import Item
 def cart_add(request, item_id):
     product = get_object_or_404(Inventory, item_id=item_id)
     customer = get_object_or_404(Customer, customer_id=1)
-    form = CartAddProductForm(request.POST)
+    form = CartAddProductForm(request.POST)#.__init__(target_id=product)
+    form.match_quantity(item_id)            # for matching quantity
     if form.is_valid():
         cd = form.cleaned_data
-        """
-        cart.add(item=product,
-                 quantity=cd['quantity'],
-                 update_quantity=cd['update'])
-        """
-        
         try:
-            origin_quantity = Item.objects.get(item_id=item_id).quantity_per_item
-            new_quantity = origin_quantity + cd['quantity']
-            Item.objects.filter(item_id=item_id).update(quantity_per_item= new_quantity)
+            Item.objects.filter(item_id=item_id).update(quantity_per_item= cd['quantity'])
             per_price = Item.objects.get(item_id=item_id).price
-            Item.objects.filter(item_id=item_id).update(total_price = per_price * new_quantity)
+            Item.objects.filter(item_id=item_id).update(total_price = per_price * cd['quantity'])
         except ObjectDoesNotExist:
             Item.objects.create(item_id=product,
                                 price=product.price,
@@ -37,6 +30,17 @@ def cart_add(request, item_id):
                                 total_price = product.price * cd['quantity'])
 
     return redirect('cart:cart_detail')
+
+
+def cart_remove(request, item_id):
+    product = get_object_or_404(Inventory, item_id=item_id)
+    try:
+        Item.objects.filter(item_id=product).delete()
+    except ObjectDoesNotExist:
+        pass
+
+    return redirect('cart:cart_detail')
+
 
 def cart_detail(request):
     items = Item.objects.all()
@@ -52,5 +56,4 @@ def cart_detail(request):
                 'update': True
             })
     """
-    return render(request, 'cart/detail.html', {'items': items}
-                )
+    return render(request, 'cart/detail.html', {'items': items})

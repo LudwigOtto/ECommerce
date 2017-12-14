@@ -23,21 +23,22 @@
                 <tr>
                     <td class="col-sm-1 col-md-3 text-center"><strong>{{ item.item_id.item_name }}</strong></td>
                     <td class="col-sm-1 col-md-1 text-center"><strong>{{ item.quantity_per_item }}</strong>
-                        {% buttons %}
-                            <button type="button" class="btn btn-success btn-product">
-                                Update
-                            </button>
-                        {% endbuttons %}
+                        <a href="{% url "shop:inventory_detail" item.item_id.item_id %}">
+                            {% csrf_token %}
+                            {% buttons %}
+                                <button type="submit" class="btn btn-success btn-product">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Update
+                                </button>
+                            {% endbuttons %}
+                        </a>                        
                     </td>
                     <td class="col-sm-1 col-md-3 text-center"><strong>${{ item.price }}</strong></td>
                     <td class="col-sm-1 col-md-3 text-center"><strong>${{ item.total_price }}</strong></td>
                     <td class="col-sm-1 col-md-1" style="text-align: center">
-                        {% buttons %}
-                            <button type="submit" class="btn btn-success btn-product">
-                                Remove
-                            </button>
-                        {% endbuttons %}
-                        </form>
+                        <a href="{% url "cart:cart_remove" item.item_id.item_id %}" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-remove" aria-hidden="true"></i> Remove
+                        </a>
+                        
                     </td>
                 </tr>
                 {% endfor %}
