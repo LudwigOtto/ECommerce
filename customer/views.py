@@ -11,6 +11,7 @@ def customer_list(request):
     if form.is_valid():
         cd = form.cleaned_data
         c_id = cd['c_id']
+        Customer.CUR_ID = c_id
         #customer = get_object_or_404(Customer, customer_id = cd['c_id'])
     else:
         c_id = 0
@@ -30,6 +31,7 @@ def customer_new(request):
         c_email = cd['email']
         c_phone = cd['phone']
         c_addr = cd['address']
+        Customer.CUR_ID = c_id
         customer = Customer.objects.create(customer_id=c_id,
                 email=c_email,
                 first_name=c_first,

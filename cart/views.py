@@ -11,7 +11,7 @@ from .models import Item
 @require_POST
 def cart_add(request, item_id):
     product = get_object_or_404(Inventory, item_id=item_id)
-    customer = get_object_or_404(Customer, customer_id=1)
+    customer = get_object_or_404(Customer, customer_id=Customer.CUR_ID)
     form = CartAddProductForm(request.POST)#.__init__(target_id=product)
     form.match_quantity(item_id)            # for matching quantity
     if form.is_valid():
@@ -43,7 +43,8 @@ def cart_remove(request, item_id):
 
 
 def cart_detail(request):
-    items = Item.objects.all()
+    print(Customer.CUR_ID)
+    items = Item.objects.filter(customer_id=Customer.CUR_ID)
     """
     for item in items:
         inventory = item.item_id

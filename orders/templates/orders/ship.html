@@ -1,0 +1,31 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Shippment{% endblock %}</title>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+<div class="container">
+{% block content %}
+<div class="page-header">
+  <h2>Shippment</h2>
+</div>
+
+  <form  action="{% url "order:payment" %}"  method="post">
+    {% csrf_token %}
+    {% bootstrap_form ShipForm %}
+    <p align="middle">
+    <button type="submit">Next</button>
+  </p>
+  </form>
+{% endblock %}
+</div>
+</body>
+</html>

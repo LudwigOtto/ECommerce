@@ -13,3 +13,5 @@ class Customer(models.Model):
     class Meta:
         managed = False
         db_table = 'Customer'
+
+    CUR_ID = 0
